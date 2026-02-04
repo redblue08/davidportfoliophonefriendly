@@ -1,6 +1,4 @@
-/* =====================
-   RESET & GLOBAL
-   ===================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -294,22 +292,106 @@ button.light {
   }
 }
 
-@media (max-width: 480px) {
+/* =========================
+   MOBILE FIRST FIX
+   ========================= */
+@media (max-width: 600px) {
 
+  body {
+    padding-top: 65px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  /* SECTIONS */
   section {
-    padding: 40px 20px;
+    padding: 50px 16px;
+  }
+
+  /* HERO */
+  .home {
+    gap: 25px;
   }
 
   .hero-text h1 {
-    font-size: 30px;
+    font-size: 26px;
+    line-height: 1.2;
   }
 
-  .why-text h2,
-  .designs h2 {
-    font-size: 28px;
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    width: 220px;
+    margin: 0 auto;
   }
 
   button {
-    padding: 10px 24px;
+    width: 100%;
+    max-width: 260px;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* INTRO + WHY */
+  .introduction,
+  .why {
+    gap: 25px;
+  }
+
+  .why img {
+    width: 230px;
+  }
+
+  .why-text h2 {
+    font-size: 26px;
+  }
+
+  .why-text p {
+    font-size: 14px;
+  }
+
+  /* DESIGNS */
+  .design-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .design-grid img {
+    height: 200px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 50px 16px;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* CONTACT */
+  .contact-box {
+    width: 100%;
+    padding: 20px;
+    font-size: 14px;
   }
 }
