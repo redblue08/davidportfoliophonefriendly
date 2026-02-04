@@ -1,0 +1,315 @@
+/* =====================
+   RESET & GLOBAL
+   ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 90px;
+  background-color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  scroll-margin-top: 100px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   NAVBAR
+   ===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 80px;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  padding: 15px 80px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: lowercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d7c2a5;
+}
+
+/* =====================
+   HERO / HOME
+   ===================== */
+.home {
+  background: #000;
+  color: #fff;
+  display: flex;
+  padding: 80px;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 350px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.introduction {
+  display: flex;
+  padding: 80px;
+  gap: 60px;
+  align-items: center;
+  background: #d7c2a5;
+  color: #000;
+}
+
+
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+ background-color: white;
+ color: black;
+}
+
+button.light {
+  background: #d7c2a5;
+  color: #000;
+}
+
+.why {
+  display: flex;
+  padding: 80px;
+  gap: 60px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.why img {
+  width: 350px;
+}
+
+.why-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.why-text p {
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.designs {
+  padding: 80px;
+  background: #fff;
+  text-align: center;
+}
+
+.designs h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.design-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.design-grid img:hover {
+  transform: scale(1.05);
+}
+
+.testimonials {
+  padding: 80px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  width: 30%;
+  min-width: 260px;
+}
+
+.card span {
+  display: block;
+  margin: 15px 0;
+}
+
+.contact {
+  background: #000;
+  color: #fff;
+  padding: 80px;
+  text-align: center;
+}
+
+.contact-box {
+  border: 1px solid #fff;
+  padding: 30px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  section {
+    padding: 60px 30px;
+  }
+
+  .home,
+  .introduction,
+  .why {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img,
+  .why img {
+    width: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .why-text h2,
+  .designs h2 {
+    font-size: 32px;
+  }
+
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .why-text h2,
+  .designs h2 {
+    font-size: 28px;
+  }
+
+  button {
+    padding: 10px 24px;
+  }
+}
